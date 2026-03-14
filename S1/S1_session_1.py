@@ -73,17 +73,23 @@ else:
 ### La IA generó un sistema de cálculo de bonos, pero está crasheando y 
 # tomando decisiones ilógicas. ¿Puedes encontrar los 3 errores, 
 # arreglarlos y mejorar los prints usando f-strings?
-sueldo = input("Ingresa tu sueldo base: ")
-anios_empresa = input("¿Cuántos años llevas en la empresa?: ")
 
-bono = sueldo * 0.10 
+sueldo = float(input("Ingresa tu sueldo base: "))
+anios_empresa = int(input("¿Cuántos años llevas en la empresa?: "))
+
+bono = float(sueldo) * 0.10 
 
 if anios_empresa > 5:
-    print("¡Felicidades! Tienes un bono extra por antigüedad.")
     total = sueldo + bono + 500
+    print(f"¡Felicidades! Tienes un bono extra por antigüedad. Tu total a recibir es: {total}")
+    
 else:
-    print("No hay bono de antigüedad.")
     total = sueldo + bono
+    print(f"No hay bono de antigüedad. Tu total a recibir es: {total}")
 
-print("Tu total a recibir es:")
-print(total)
+
+
+""" R: EL error se estaba generando porque no se guardaba las variables como float e int, 
+lo que hacía que el programa no pudiera realizar las operaciones matemáticas.
+Además, se mejoraron los prints usando f-strings y el calculo se hizo previo al print para que no generara un error de variable no definida.
+ """
